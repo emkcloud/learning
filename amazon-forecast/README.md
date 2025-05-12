@@ -1,5 +1,14 @@
-# Learning
-In this repository, you can find some resources that you can use while following my courses, which are published on various e-learning platforms. Here is the list of available resources:
+# Amazon Forecast
+
+## Introduction
+
+Following a hands-on experience with one of my clients, I had published an online e-learning course on **Amazon Forecast**, a service used for generating time series forecasts.
+
+Unfortunately — and quite unexpectedly — Amazon has since discontinued this service. As often happens when major tech companies retire tools without notice, I found myself having invested considerable time in something that now needs to be restructured or replaced.
+
+Despite this setback, the course still contains many valuable insights into **machine learning** and forecasting concepts in general. For this reason, I am sharing the original course materials here in this repository, as they may still be helpful to others interested in the topic.
+
+Feel free to explore, reuse, or adapt the content as needed.
 
 * [Amazon AWS](/amazon-aws/README.md)
 * [Amazon Forecast](/amazon-forecast/README.md)
