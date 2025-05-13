@@ -1,10 +1,10 @@
-## (01: Presentazione)
+## Presentazione
 
 ![presentazione](../images/it-amazon-forecast-01-01-001.jpg)
 
 Benvenuti, sono Massimo! È un piacere avervi qui con me come appassionati che vogliono scoprire le incredibili potenzialità dei servizi di intelligenza artificiale offerti da Amazon AWS. In questo percorso formativo, ci concentreremo su una gemma particolarmente brillante di questi servizi: Amazon Forecast.
 
-## (02: Missione)
+## Missione
 
 ![missione](../images/it-amazon-forecast-01-01-002.jpg)
 
@@ -12,7 +12,7 @@ La nostra missione sarà quella di esplorare insieme come questo strumento possa
 
 Quindi come possiamo vedere da questa slide le fase principali saranno la preparazione e l'analisi dei dati storici (chiamati dataset), la generazione delle previsioni e come utilizzarle per prendere delle decisioni.
 
-## (03: Servizio)
+## Servizio
 
 ![servizio](../images/it-amazon-forecast-01-01-003.jpg)
 
@@ -38,7 +38,7 @@ Si paga solo per le risorse che si usano e il numero delle previsioni che vengon
 
 Questo significa che potrete sfruttare la potenza dell'apprendimento automatico per le vostre previsioni, senza la necessità di diventare esperti di AI o di gestire complesse configurazioni di sistema, come server, sistemi operativi, scalabilità, calcolo con schede grafiche GPU etc etc.
 
-## (04: Obiettivo)
+## Obiettivo
 
 ![obiettivo](../images/it-amazon-forecast-01-01-004.jpg)
 
@@ -58,7 +58,7 @@ Una volta che abbiamo preparato i nostri dati e creato quelli che in Amazon Fore
 
 Una volta ottenute le previsioni passeremo ad analizzare i risultati sia con la console AWS ma anche tramite esportazione di un file su Amazon S3 o con una integrazione applicativa tramite l'uso di API per moltissimi linguaggi di programmazione.
 
-## (05: Metodo)
+## Metodo
 
 ![metodo](../images/it-amazon-forecast-01-01-005.jpg)
 
@@ -68,7 +68,7 @@ Dalle esperienze passate, abbiamo identificato due svantaggi nell'enfatizzare ec
 
 Invece di utilizzare le classiche registrazioni dello schermo, opteremo per illustrazioni e videate che evidenziano gli obiettivi chiave, assicurando così che l'attenzione sia focalizzata sui concetti e sulle strategie di previsione, piuttosto che sulla posizione di bottoni o menu nell'interfaccia che costringono a passare la maggior parte del tempo ad inseguire un cursore.
 
-## (06: Laboratorio)
+## Laboratorio
 
 ![laboratorio](../images/it-amazon-forecast-01-01-006.jpg)
 
@@ -78,7 +78,7 @@ Come potete vedere in questa slide le analisi preimpostate di Amazon Forecast so
 
 Poi esistono dei domini di configurazione per compiti specifici, come ad esempio. RETAIL, INVENTORY PLANNING, WORK FORCE e WEB TRAFFIC. I quali hanno già un formato di dataset predefinito che facilita il lavoro di preparazione.
 
-## (07: Iscrizione)
+## Iscrizione
 
 ![iscrizione](../images/it-amazon-forecast-01-01-007.jpg)
 
