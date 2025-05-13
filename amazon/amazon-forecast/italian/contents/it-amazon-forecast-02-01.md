@@ -116,13 +116,9 @@ Per concludere, come vi avevo promesso in precedenza, vediamo alcune cose da ten
 
 Quindi prendete questa sezione come solo informativa e non ufficialmente valida per il calcolo dei costi dei servizi che andrete ad utilizzare una volta iscritti agli Amazon Web Services.
 
-Detto questo:
+Detto questo: Io dividerei i costi in tre gruppi Storage, Computazione e Previsioni. Aggiungendo anche che al momento di questo corso esiste una prova gratuita di due mesi per fare le prime prove e valutare il servizio senza fare investimenti economici.
 
-Io dividerei i costi in tre gruppi Storage, Computazione e Previsioni. Aggiungendo anche che al momento di questo corso esiste una prova gratuita di due mesi per fare le prime prove e valutare il servizio senza fare investimenti economici.
-
-Comunque:
-
-Il primo costo è lo storage occupato dalle operazione di upload, si paga circa 0,088 USD a GB, in ogni caso è il costo minore del servizio, io sinceramente non sono mai arrivato a spendere cifre molto significative, a differenza della generazione dei forecasts dove si può spendere parecchio specialmente se sono ripetute in tempi brevi.
+Comunque: Il primo costo è lo storage occupato dalle operazione di upload, si paga circa 0,088 USD a GB, in ogni caso è il costo minore del servizio, io sinceramente non sono mai arrivato a spendere cifre molto significative, a differenza della generazione dei forecasts dove si può spendere parecchio specialmente se sono ripetute in tempi brevi.
 
 Il secondo costo è il tempo di elaborazione del modello, il quale è molto difficile da calcolare a priori in quanto vengono provati diversi algoritmi, trovati quelli più idonei e in molti casi i dati vengono anche confrontati con i dataset di amazon come le (previsioni meteo) e Holiday (il calendario delle festività). In ogni caso stiamo circa sui 0.24 USD ogni ora di elaborazione richiesta dalla creazione del predictor.
 
