@@ -42,11 +42,12 @@ Il secondo metodo è quello di richiedere una esportazione completa delle previs
 Il terzo metodo quello un pochino più complesso è quello di usare delle chiamata API per identificare le risorse, la dimensione e il periodo di previsione che vogliamo analizzare e con il quale verrà restituito al vostro programma una struttura dati in formato JSON.
 
 Quindi ricapitolando tutto il concetto da capo:
-1) Prepariamo i dati storici presenti nel nostro database.
-2) Prepariamo i dati relazionati presenti sempre nel nostro database.
-3) Eseguiamo la funzione di import in Amazon Forecast.
-4) Creiamo il nostro predictor e generiamo le previsioni (forecasts).
-5) Interroghiamo le previsioni tramite console o tramite programmi e integrazioni API.
+
+- Prepariamo i dati storici presenti nel nostro database.
+- Prepariamo i dati relazionati presenti sempre nel nostro database.
+- Eseguiamo la funzione di import in Amazon Forecast.
+- Creiamo il nostro predictor e generiamo le previsioni (forecasts).
+- Interroghiamo le previsioni tramite console o tramite programmi e integrazioni API.
 
 Questo è in maniera molto semplice l'intero processo del servizio di previsione.
 
@@ -102,9 +103,9 @@ La previsioni sono le linee alla destra di questo grafico, come potete notare no
 
 Sia se questo concetto è già di tuo conoscimento o no, adesso non è importante, in quanto comunque lo affronteremo più in là. Adesso concentriamoci sul percentile 50 (la riga verde) e supponiamo che abbiamo solo questa previsione e che siamo a fine gennaio 2024. Il servizio di Forecast ci sta dicendo che secondo la sua previsione il prodotto selezionato avrà una vendita di:
 
-836 unità dal 05.02.2024 al 11.02.2024
-687 unità dal 12.02.2024 al 18.02.2024
-938 unità dal 19.02.2024 al 25.02.2024
+- 836 unità dal 05.02.2024 al 11.02.2024
+- 687 unità dal 12.02.2024 al 18.02.2024
+- 938 unità dal 19.02.2024 al 25.02.2024
 
 Quindi adesso che abbiamo questi dati cosa possiamo farci? Be, un esempio potrebbe essere quello di calcolare le vendite delle prossime due settimane fare la differenza con lo stock attuale per sapere lo stock mancante ed eseguire un ordine a fornitore per coprire le vendite delle prossime 2/3 settimane a secondo dei casi specifici. Ma come scoprirete da soli le decisioni che si possono prendere sono moltissime e tutte molto interessanti dal punto di vista aziendale.
 

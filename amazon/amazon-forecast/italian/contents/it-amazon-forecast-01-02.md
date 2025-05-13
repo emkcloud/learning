@@ -58,9 +58,9 @@ Da quel momento in poi, ho fatto di AWS il fulcro della mia attività profession
 
 Per quanto riguarda i servizi AI di Amazon al momento utilizzo:
 
-    • Amazon Forecast
-    • Amazon Personalize
-    • Amazon Comprehend
-    • Amazon Rekognition
+- Amazon Forecast
+- Amazon Personalize
+- Amazon Comprehend
+- Amazon Rekognition
 
 Con questa panoramica spero di averti fornito un contesto utile sulla mia esperienza e sul percorso che mi ha portato fino a qui, dove cercherò di guidarti nell'apprendimento del servizio di Amazon Forecast e delle tecnologie cloud in generale.

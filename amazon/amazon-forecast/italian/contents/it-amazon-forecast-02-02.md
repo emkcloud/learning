@@ -69,10 +69,10 @@ dovreste vedere l'elenco di tutti i comandi disponibili nel servizio di Amazon F
 
 Come potete vedere abbiamo a disposizione diversi comandi (ad esempio):
 
-    • create-dataset per creare un dataset
-    • list-predictors per listare dei predictor esistenti
-    • delete-dataset-group per cancellare un dataset group
-    • update-dataset-group per modificare un dataset group
+- `create-dataset` per creare un dataset
+- `list-predictors` per listare dei predictor esistenti
+- `delete-dataset-group` per cancellare un dataset group
+- `update-dataset-group` per modificare un dataset group
 
 e cosi via per molte altre operazioni. Ok adesso passiamo agli SDK.
 
