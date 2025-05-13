@@ -1,12 +1,12 @@
-## (slide 1)
+## Upload
 
-![domini](../images/it-amazon-forecast-03-03-001.jpg)
+![upload](../images/it-amazon-forecast-03-03-001.jpg)
 
 Benvenuti in questa nuova lezione dove affronteremo la fase di upload dei dataset in nostro possesso secondo le specifiche che abbiamo indicato nelle lezioni precedenti. Iniziamo...
 
-## (slide 2)
+## Introduzione
 
-![domini](../images/it-amazon-forecast-03-03-002.jpg)
+![introduzione](../images/it-amazon-forecast-03-03-002.jpg)
 
 Finalmente siamo alla prima fase del servizio di Amazon Forecast e cioè quella in cui eseguiamo un upload dei nostri dataset. Statisticamente parlando circa il 4% di voi avranno seguito il mio consiglio e preparato i loro dataset con cui eseguire questa operazione. Il 96% restante non avendolo fatto dovrà seguire il mio caricamento con miei dataset e rinunciare all'esperienza personale diretta tramite console AWS.
 
@@ -21,7 +21,7 @@ Contiene per ogni prodotto una riga con le informazioni anagrafiche da associare
 
 Anche voi fate la stessa cosa e preparate sempre uno schemino simile, vi consiglio di prendere questa abitudine prima del caricamento per verificare che i dati siamo quelli aspettati, specialmente le prime volte per fare un calcolo dei prezzi in base alle previsioni che andrete a generare.
 
-ADESSO ANALIZZIAMO IL TUTTO
+**ADESSO ANALIZZIAMO IL TUTTO**
 
 Tutti e 3 i file devono essere memorizzati in un bucket S3 per importarli con la funzione standard di Amazon Forecast. Usate il formato CSV anche se è permesso il formato PARQUET.
 
@@ -37,9 +37,9 @@ Nel mio caso sono 3 anni di storico.
 
 Nel secondo dataset abbiamo lo stesso dato, ogni prodotto indicherà per ogni settimana le variabili che hanno inciso sulla vendita, prezzo, offerta, stock etc.. Le righe sono 1.300.000 per un totale di 38 MB.
 
-## (slide 3)
+## Datasets
 
-![domini](../images/it-amazon-forecast-03-03-003.jpg)
+![datasets](../images/it-amazon-forecast-03-03-003.jpg)
 
 Questo è un esempio dei miei dataset anche se c'e ne sono di più per delle funzioni più avanzate, pero' ci sono quelli che abbiamo appena indicato.
 
@@ -47,9 +47,9 @@ Nell'immagine in alto i dataset sono processati e memorizzati su un server appli
 
 Una volta che i dataset sono pronti saranno spediti su un bucket di Amazon S3 in modo che possano essere caricati su Amazon Forecast.
 
-## (slide 4)
+## Permessi
 
-![domini](../images/it-amazon-forecast-03-03-004.jpg)
+![permessi](../images/it-amazon-forecast-03-03-004.jpg)
 
 Se già usate i servizi AWS sapete bene che la sicurezza è presa molto seriamente da Amazon e ogni volta che usiamo un servizio dobbiamo essere sicuri di creare le risorse con le giuste autorizzazioni.
 
@@ -59,17 +59,17 @@ Anche Amazon Forecast segue questa caratteristica e quindi bisogna creare un Ruo
 
 Purtroppo non posso entrare nei dettagli di Amazon IAM anche perché servirebbe un corso solo per questo forse anche più complesso di Amazon Forecast. Pero' vi posso elencare i passi per creare un Ruolo. Quindi andate in IAM dove troverete nel menu di sinistra la sezione dei Ruoli subito dopo quelle degli utenti.
 
-## (slide 5)
+## Ruolo
 
-![domini](../images/it-amazon-forecast-03-03-005.jpg)
+![ruolo](../images/it-amazon-forecast-03-03-005.jpg)
 
 Selezionatela e cliccate su "Creazione Ruolo" e come vedete da questa slide scegliete come tipo di Ruolo il Servizio AWS (AWS service) (prima freccia verde) e più in basso Forecast come Nome del Servizio. Lasciate spuntate anche la opzione sottostante che indica di permettere l'accesso di Forecast ad Amazon S3.
 
 Cliccate sul pulsante NEXT per andare al passo successivo:
 
-## (slide 6)
+## Policies
 
-![domini](../images/it-amazon-forecast-03-03-006.jpg)
+![policies](../images/it-amazon-forecast-03-03-006.jpg)
 
 La policy AmazonS3FullAccess viene aggiunta in automatico dato che abbiamo flaggato l'opzione precedente sulle autorizzazione di Amazon S3. Andiamo avanti:
 
@@ -77,17 +77,17 @@ Indicate un Nome al Ruolo (ad esempio AmazonForecast-ExecutionRole) e se volete 
 
 Giusto per essere preciso anche se in questo momento non è così importante, il Ruolo creato è molto permissivo su S3 in quanto ha l'autorizzazione di lettura su tutti i bucket dell'account, in futuro quando dovete andare in ambiente di produzione limitate questo permesso solo al bucket interessato.
 
-## (slide 7)
+## Controllo
 
-![domini](../images/it-amazon-forecast-03-03-007.jpg)
+![controllo](../images/it-amazon-forecast-03-03-007.jpg)
 
 Ok adesso eseguiamo il primo UPLOAD del dataset TARGET_TIME_SERIES, vi ripropongo questa schermata dove dopo la creazione del dataset group avevamo notato che tutte le opzioni erano disabilitate in quanto bisognava prima di tutto eseguire l'upload di questi dati..
 
 Quindi entriamo nel dataset group e clicchiamo sul pulsante IMPORT.
 
-## (slide 8)
+## Target
 
-![domini](../images/it-amazon-forecast-03-03-008.jpg)
+![target](../images/it-amazon-forecast-03-03-008.jpg)
 
 Per prima cosa ci viene chiesto il nome del dataset, io ho indicato dataset_target.
 
@@ -95,17 +95,17 @@ Come secondo valore ci viene chiesta la Frequenza, nel mio caso, come ho diverse
 
 Se voi per caso avete creato un dataset con una Frequenza diversa specificate qui il valore corretto.
 
-## (slide 9)
+## Target Schema
 
-![domini](../images/it-amazon-forecast-03-03-009.jpg)
+![target-schema](../images/it-amazon-forecast-03-03-009.jpg)
 
 A seguire ci viene chiesto di indicare lo schema che nel nostro caso è abbastanza semplice in quanto usiamo lo schema standard e quindi i campi sono già preimpostati.
 
 La unica cosa che dovete ricordare è di cambiare il formato della data che essendo una data senza indicazione di orario, deve essere selezionata l'opzione che vedete nella seconda freccia verde.
 
-## (slide 10)
+## Target dettagli
 
-![domini](../images/it-amazon-forecast-03-03-010.jpg)
+![target-dettagli](../images/it-amazon-forecast-03-03-010.jpg)
 
 A seguire dobbiamo indicare i valori del JOB di importazione, dobbiamo indicare un nome di lavoro, questo deve essere univoco non si può usare sempre lo stesso nome per tutte le importazioni.
 
@@ -117,9 +117,9 @@ L'ultimo parametro da indicare è il Ruolo, quel famoso ruolo che abbiamo creato
 
 OK adesso possiamo fare START tramite il pulsante giallo messo a disposizione.
 
-## (slide 11)
+## Target Check
 
-![domini](../images/it-amazon-forecast-03-03-011.jpg)
+![target-check](../images/it-amazon-forecast-03-03-011.jpg)
 
 Una volta che abbiamo confermato l'operazione di upload saremo dirottati alla pagina precedente dove il pulsante di upload sarà sostituito con l'indicazione di upload in progress.. Freccia verde sulla sinistra.
 
@@ -129,17 +129,17 @@ Una volta che il dataset è stato caricato come potete vedere nella parte destra
 
 Pero dato che noi siamo bravi e ci piace fare le cose bene, continuiamo ad eseguire l'upload del seguente dataset che ci viene indicato come ITEM_METADATA. Quindi selezioniamo di nuovo il pulsante IMPORT.
 
-## (slide 12)
+## Metadata
 
-![domini](../images/it-amazon-forecast-03-03-012.jpg)
+![metadata](../images/it-amazon-forecast-03-03-012.jpg)
 
 Il primo parametro da indicare è il nome del dataset che nel nostro caso sarà dataset_metadata. Qui a differenza del primo dataset non ci viene chiesta la Frequenza, in quanto il METADATA non ha nessun timestamp e le informazioni sono a livello di singolo prodotto.
 
 Qui dopo il nome.. troviamo lo schema che in questo caso dovrà essere compilato in quanto abbiamo aggiunti molti campi che non sono previsti in modo standard, quindi con il pulsante di "aggiunta attributi" dobbiamo indicare il nostro schema che abbiamo presentato nelle lezioni precedenti.
 
-## (slide 13)
+## Metadata attributi
 
-![domini](../images/it-amazon-forecast-03-03-013.jpg)
+![metadata-attributi](../images/it-amazon-forecast-03-03-013.jpg)
 
 Il mio dataset è composto secondo questo schema:
 
@@ -151,9 +151,9 @@ Il mio dataset è composto secondo questo schema:
 
 Ovviamente se nella creazione del vostro dataset avete cambiato la logica dei campi o anche la loro sequenza indicate correttamente quelli presenti nel vostro dataset.
 
-## (slide 14)
+## Metadata dettagli
 
-![domini](../images/it-amazon-forecast-03-03-014.jpg)
+![metadata-dettagli](../images/it-amazon-forecast-03-03-014.jpg)
 
 Ok siamo arrivati all'ultima schermata di parametri dove dobbiamo indicare i valore del JOB di importazione, che senza ripetermi sono gli stessi che abbiamo indicato nella prima importazione.
 
@@ -161,9 +161,9 @@ Quindi il nome del lavoro, il formato del file del nostro dataset che è in CSV,
 
 Quindi fate di nuovo START e aspettiamo la fine dell'importazione.
 
-## (slide 15)
+## Metadata check
 
-![domini](../images/it-amazon-forecast-03-03-015.jpg)
+![metadata-check](../images/it-amazon-forecast-03-03-015.jpg)
 
 OK, saremo dirottati di nuovo sulla schermata che ormai conoscete benissimo e vedremo il secondo dataset in stato di upload progress... 
 
@@ -171,15 +171,15 @@ Aspettiamo anche questa volta qualche minuto fino a quando la schermata non sar�
 
 Clicchiamo su questo pulsante e andiamo ad eseguire il nostro ultimo UPLOAD.
 
-## (slide 16)
+## Related
 
-![domini](../images/it-amazon-forecast-03-03-016.jpg)
+![related](../images/it-amazon-forecast-03-03-016.jpg)
 
 Indichiamo come sempre il nome del dataset che nel nostro caso è dataset_related e la frequenza dei nostri dati che in questo caso noi selezioniamo il livello settimanale. In quanto l'aggregazione del nostro dataset RELATED è su base settimanale e non giornaliera come nel dataset TARGET_TIME_SERIES.
 
-## (slide 17)
+## Related Schema
 
-![domini](../images/it-amazon-forecast-03-03-017.jpg)
+![related-schema](../images/it-amazon-forecast-03-03-017.jpg)
 
 Per quanto riguarda lo schema anche qui dobbiamo personalizzarlo secondo le nostre necessità, quindi aggiungere tutti i campi che abbiamo previsto quando abbiamo fatto le lezioni sulla preparazione dei dataset. Nel nostro caso abbiamo:
 
@@ -190,9 +190,9 @@ Per quanto riguarda lo schema anche qui dobbiamo personalizzarlo secondo le nost
 
 Ok controllate bene i valori immessi e andiamo all'ultima schermata prima dell'UPLOAD.
 
-## (slide 18)
+## Related dettagli
 
-![domini](../images/it-amazon-forecast-03-03-018.jpg)
+![related-dettagli](../images/it-amazon-forecast-03-03-018.jpg)
 
 OK siamo arrivati all'ultima schermata di parametri dove dobbiamo indicare i valore del JOB di importazione, che senza ripetermi sono gli stessi che abbiamo indicato nella prima importazione.
 
@@ -200,9 +200,9 @@ Quindi il nome del lavoro, il formato del file del nostro dataset che è in CSV,
 
 Quindi fate di nuovo START e aspettiamo la fine dell'importazione.
 
-## (slide 19)
+## Conclusione
 
-![domini](../images/it-amazon-forecast-03-03-019.jpg)
+![conclusione](../images/it-amazon-forecast-03-03-019.jpg)
 
 A questo punto non avendo più dataset da importare saremo dirottati sulla pagina dei dataset dove vedremo in stato di progress il nostro ultimo dataset e in active gli altri due. (immagine superiore della slide)
 
@@ -212,9 +212,9 @@ Una volta che i dataset sono pronti date sempre un occhiata alle caratteristiche
 
 Andiamo alla prossima slide per farvi un esempio concreto:
 
-## (slide 20)
+## Overview
 
-![domini](../images/it-amazon-forecast-03-03-020.jpg)
+![overview](../images/it-amazon-forecast-03-03-020.jpg)
 
 Qui siamo entrati nei dettagli del dataset RELATED, nell'immagine in alto vediamo le opzioni principali, tipo il nome del dataset, la frequenza (W sta per settimana) il formato di timestamp, lo stato in Active etc.
 
@@ -224,17 +224,17 @@ Ad esempio qui vediamo l'attributo Discount che è stato indicato su 1.359.553 r
 
 La media è di un 4.8 e la deviazione standard è di 9.2. È interessante da notare che raggruppando gli sconti in range abbiamo ottenuto solo 11 valori diversi da associare ai cambi dei volumi di vendita. 
 
-## (slide 21)
+## Statistiche
 
-![domini](../images/it-amazon-forecast-03-03-021.jpg)
+![statistiche](../images/it-amazon-forecast-03-03-021.jpg)
 
 Vediamo anche il dataset METADATA che ha l'attributo brand che ci indica che abbiamo 344 brand diversi su 10929 associazioni a prodotti. I valori massimi e minimi etc non ci sono in quanto è una stringa.
 
 Da notare che sotto le caratteristiche degli attributi troverete anche lo schema assegnato al dataset, le prime volte controllate sempre perché se pensiamo di lavorare con uno schema e in realtà ne abbiamo definito uno diverso possiamo perdere tanto tempo a non capire i risultati e le analisi aggiuntive in explore.
 
-## (slide 22)
+## Summary
 
-![domini](../images/it-amazon-forecast-03-03-022.jpg)
+![summary](../images/it-amazon-forecast-03-03-022.jpg)
 
 Dopo aver creato i dataset se volete un consiglio fate uno schemino come questo, vi ritornerà molto utile, oltretutto si può automatizzare molto facilmente in automatico alla fine degli upload tramite dei semplici programmi applicativi che chiamano le API di Amazon Forecast e creano un foglio EXCEL.
 
