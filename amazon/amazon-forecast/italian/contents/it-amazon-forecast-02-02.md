@@ -101,5 +101,3 @@ Un altro metodo che vorrei aggiungere è quello di visitare il repository di Git
 Qui vi faccio vedere un esempio di un'analisi What-IF la quale inizia con un upload su Amazon S3 di un dataset di dati. Tutte cose che vedremo in seguito, pero useremo la console no un notebook. In quanto è più semplice dal punto di vista didattico e non creiamo dei limiti di accesso alle persone iscritte.
 
 Con questa slide concludiamo l'introduzione generale e dalla prossima lezione entriamo nel vivo del servizio con la creazione del nostro primo dataset. 
-
-L'avventura vera inizia adesso, un grande saluto e grazie per esserti iscritto al mio corso...

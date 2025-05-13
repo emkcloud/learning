@@ -85,7 +85,3 @@ Poi esistono dei domini di configurazione per compiti specifici, come ad esempio
 Se condividi l'approccio che abbiamo descritto e l'argomento trattato è esattamente ciò che stavi cercando, allora sei decisamente nel posto giusto. Iscriviti a questo corso e iniziamo insieme questa avventura.
 
 Ti guideremo nei concetti chiave della previsione che renderanno il tuo utilizzo di Amazon Forecast non solo efficace, ma anche intuitivo e avvincente.
-
-In qualsiasi piattaforma ti trovi per l'acquisto del corso ricorda che la prima parte del corso che stai vedendo è sempre gratuita, questo proprio per darti il tempo di verificare se quello che stai comprando è esattamente quello che stai cercando. 
-
-Un acquisto sbagliato è una brutta esperienza da parte di uno studente ma vi assicuro lo è anche per me. Quindi se dopo aver visto i video iniziali pensi di essere nel posto giusto allora iscriviti al corso e iniziamo insieme il servizio di Amazon Forecast.

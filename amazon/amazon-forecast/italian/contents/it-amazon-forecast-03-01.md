@@ -70,5 +70,3 @@ Vediamo alcuni dettagli e casi d'uso disponibili.
 - METRICS: Per le previsioni di metriche specifiche in ambito finanziario e operativo.
 
 Ok adesso siamo pronti per passare alla creazione del nostro primo dataset di dati.
-
-Grazie per partecipare a questo corso, ci vediamo alla prossima lezione.
