@@ -6,12 +6,12 @@ Benvenuto a questa nuova sezione del corso dedicata alla creazione dei modelli i
 
 Se hai seguito tutte lezioni precedenti in questo momento ti dovresti trovare in questa condizione:
 
-    • (1) Hai il tuo account AWS
-    • (2) Hai scelto la regione geografica dove lavorare
-    • (3) Hai creato il Ruolo di autorizzazione per il servizio di Amazon Forecast
-    • (4) Hai creato un dataset group 
-    • (5) Hai creato i 3 dataset di dati TARGET, RELATED e METADATA
-    • (6) Hai eseguito l'upload di questi dataset su Amazon Forecast
+- Hai il tuo account AWS
+- Hai scelto la regione geografica dove lavorare
+- Hai creato il Ruolo di autorizzazione per il servizio di Amazon Forecast
+- Hai creato un dataset group 
+- Hai creato i 3 dataset di dati TARGET, RELATED e METADATA
+- Hai eseguito l'upload di questi dataset su Amazon Forecast
 
 Se hai fatto tutto questo siamo pronti per analizzare la creazione del modello di previsione chiamato "predictor" il quale si base sui dati dei dataset e sulle opzioni di creazione da noi indicate.
 
@@ -36,15 +36,15 @@ Un predictor è un modello di Amazon Forecast che viene addestrato utilizzando l
 
 Nella pratica esistono 3 tipi di predictor:
 
-(1) Legacy Manuale
+**(1) Legacy Manuale**
 
 È il primo predictor che fu lanciato con Amazon Forecast, adesso ha il nome di Legacy perché è rimasto per compatibilità con il passato ma non è più consigliato utilizzarlo. Dalla console AWS non è più possibile utilizzarlo se lo si vuole creare bisogna utilizzare direttamente le API messe a disposizione dal servizio di Amazon Forecast. In questo predictor bisognava indicare l'algoritmo manualmente mentre gli iperparametri venivano settati in automatico direttamente da Forecast (HPO).
 
-(2) Legacy AutoML
+**(2) Legacy AutoML**
 
 È il secondo predictor che fu lanciato con Amazon Forecast, adesso ha il nome di Legacy come il precedente perché è rimasto per compatibilità ma non è più consigliato utilizzarlo. In questo predictor l'algoritmo veniva scelto in automatico dal servizio tramite i backtest e grazie alle metriche ne veniva scelto uno il quale veniva usato come algoritmo di default. Quindi si risparmiava il tempo di valutazione dei differenti algoritmi riducendo il tempi di elaborazione e i costi generali.
 
-(3) AutoPredictor
+**(3) AutoPredictor**
 
 È il predictor attuale e consigliato nell'utilizzo di Amazon Forecast, le previsioni sono molto più accurate dei precedenti. A differenza di AutoML, AutoPredictor non si limita a selezionare un singolo algoritmo di previsione. Invece, utilizza un approccio più sofisticato che può combinare più algoritmi e tecniche diverse per generare le previsioni. 
 
@@ -60,12 +60,12 @@ Il primo parametro richiesto è il nome del predictor che deve essere indicativo
 
 Il secondo parametro richiesto è la frequenza che rappresenta il tipo di previsione come aggregazione di tempo che deve essere generata quando richiederemo la generazione dei forecast. Il valori sono:
 
-    • 1 Minuto
-    • 1 Ora
-    • 1 Giorno
-    • 1 Settimana
-    • 1 Mese
-    • 1 Anno
+- 1 Minuto
+- 1 Ora
+- 1 Giorno
+- 1 Settimana
+- 1 Mese
+- 1 Anno
 
 Però possiamo anche usare valori multipli, tipo previsioni di 3 giorni in 3 giorni o 4 mesi in 4 mesi etc. Quindi posso specificare il livello di tempo ma anche i periodi che devono essere aggregati. 
 
@@ -109,9 +109,11 @@ In ogni caso, i quantili sono valori che dividono un set di dati ordinato in par
 
 Ad esempio, la mediana è un quantile che divide i dati in due parti uguali, con il 50% dei dati sotto e il 50% dei dati sopra. Ad esempio nello screenshot della slide ci sono 3 quantili indicati, che sono 0.10 0.50 e 0.90 questo significa che il modello genererà queste previsioni: Assumiamo che le previsioni sono unità di vendita:
 
-    • Una previsione con il quantile 0.10 genererà un forecast in percentile 10 il quale indicherà un valore di riferimento in cui il 90% delle volte le vendite saranno maggiori di questo valore e il 10% delle volte saranno uguali o minori di questo valore. 
-    • Cosi per il quantile 0.50 che genererà una previsione in percentile 50 per cui le vendite potranno essere al 50% minori della previsioni e al 50% maggiori delle previsioni.
-    • Cosi per il quantile 0.90 che genererà un forecast in percentile 90 il quale indicherà un valore di riferimento in cui il 10% delle volte le vendite saranno maggiori di questo valore e il 90% delle volte saranno uguali o minori di questo valore. 
+- Una previsione con il quantile 0.10 genererà un forecast in percentile 10 il quale indicherà un valore di riferimento in cui il 90% delle volte le vendite saranno maggiori di questo valore e il 10% delle volte saranno uguali o minori di questo valore. 
+
+- Cosi per il quantile 0.50 che genererà una previsione in percentile 50 per cui le vendite potranno essere al 50% minori della previsioni e al 50% maggiori delle previsioni.
+
+- Cosi per il quantile 0.90 che genererà un forecast in percentile 90 il quale indicherà un valore di riferimento in cui il 10% delle volte le vendite saranno maggiori di questo valore e il 90% delle volte saranno uguali o minori di questo valore. 
 
 Questo valore ovviamente lo dovete discutere con il vostro cliente o analizzare l'obiettivo della vostra azienda. Ad esempio nella mia esperienza ho visto che quasi nessun cliente lavora con il percentile 50, in quanto preferiscono un po' di sbilanciamento sul fatto di avere più magazzino e non perdere vendite.
 
@@ -123,10 +125,10 @@ Ok cerchiamo di rivedere il tutto, prendiamo le vendite di 100 giorni, uso il va
 
 A questo punto ordiniamo questi numeri (che sono le vendite mensili di un prodotto) in modo crescente in una tabella. Per prendere il valore corrispondente al quantile usiamo la formula di "arrotondamento all'indice intero più vicino", ci sono anche modi diversi come ad esempio il "metodo di interpolazione lineare" che calcola la media delle due posizioni più vicine etc però non complichiamoci la vita e usiamo la formula più semplice.
 
-Il quantile 0,10 è in posizione 10 dove troviamo 205 unità di vendita
-Il quantile 0,50 è in posizione 50 dove troviamo 280 unità di vendita
-Il quantile 0,65 è in posizione 65 dove troviamo 314 unità di vendita
-Il quantile 0,90 è in posizione 90 dove troviamo 389 unità di vendita
+- Il quantile 0,10 è in posizione 10 dove troviamo 205 unità di vendita
+- Il quantile 0,50 è in posizione 50 dove troviamo 280 unità di vendita
+- Il quantile 0,65 è in posizione 65 dove troviamo 314 unità di vendita
+- Il quantile 0,90 è in posizione 90 dove troviamo 389 unità di vendita
 
 Ora avete sicuramente capito perché ho scelto 100 elementi per rendermi la vita semplice :D
 
@@ -168,5 +170,3 @@ Invece la configurazione avanzate indicata a fine schermata è una sezione con u
 ## (slide 12)
 
 Prima di chiudere questa lezione vi faccio vedere che nella documentazione ufficiale di Amazon trovate le coordinate geografiche ammesse per il servizio di previsione con WEATHER. Selezionate in alto la regione e controllate.
-
-Grazie ancora per continuare a seguire questo corso. Ci vediamo nella prossima lezione.
