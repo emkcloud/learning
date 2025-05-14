@@ -1,8 +1,12 @@
 ## (slide 1)
 
+![slide](../images/it-amazon-forecast-05-05-001.jpg)
+
 Questa più che una nuova lezione è solo un consiglio basato sulla mia esperienza personale. Infatti sia se si usa forecast o anche nel caso in cui non lo utilizziamo possiamo ottenere dei grafici sulle previsioni in modo semplice utilizzando il servizio di Amazon Quicksight.
 
 ## (slide 2)
+
+![slide](../images/it-amazon-forecast-05-05-002.jpg)
 
 Amazon QuickSight è un servizio di business intelligence (molto spesso chiamato BI). È un servizio gestito e offerto da Amazon Web Services. Consente agli utenti di analizzare, visualizzare e condividere dati tramite dashboard interattive e report in formato PDF. Ideale per grandi quantità di dati grazie alla sua velocità.
 
@@ -12,11 +16,15 @@ In questa schermata ad esempio potete vedere dove ci sono le frecce verdi che la
 
 ## (slide 3)
 
+![slide](../images/it-amazon-forecast-05-05-003.jpg)
+
 Prima di andare a vedere QuickSight guardiamo una soluzione standard, dove le previsioni che generiamo con Amazon Forecast vengono esportate e successivamente integrate in un software applicativo, in questo scenario normalmente questo è il risultato. Una tabella dettagliata dove l'utente può cercare il suo prodotto o la risorsa sui cui vuole analizzare le previsioni e nel caso esportare questi dati su Excel per altre analisi.
 
 Tramite Quicksight possiamo usare sempre i nostri dati che sono le previsioni generate da un nostro modello presente nel servizio di Amazon Forecast e creare facilmente dei grafici di analisi. Vediamo un esempio:
 
 ## (slide 4)
+
+![slide](../images/it-amazon-forecast-05-05-004.jpg)
 
 Ecco qui è lo stesso risultato con un grafico, al centro abbiamo le vendite reali con la linea verde, le ultime 3 settimane sulla destra sono a zero in quanto sono date future non abbiamo ancora i dati di vendita reali. Come possiamo vedere il percentile 50 e 70 sono quelli che si avvicinano sempre alle vendite reali.
 
@@ -24,11 +32,15 @@ Possiamo fare decine di queste analisi e anche con grafici diversi, istogrammi, 
 
 ## (slide 5)
 
+![slide](../images/it-amazon-forecast-05-05-005.jpg)
+
 Però esiste anche un altro metodo per usare le Previsioni in Quicksight molto più semplice come utilizzo ma ovviamente meno personalizzato rispetto ai nostri dati specifici. Il metodo consiste nell'usare una serie storica senza aver neanche attivato il servizio di Amazon Forecast nel nostro account, semplicemente QuickSight userà un suo modello standard studiato per delle casistiche generali.
 
 Per non andare troppo OFF-TOPIC a chi è interessato a questa soluzione consiglio di iniziare sempre dalla documentazione ufficiale dove trovate un capitolo dedicato proprio a questo aspetto. Per il momento vi faccio vedere velocemente il risultato finale con un semplice grafico delle vendite.
 
 ## (slide 6)
+
+![slide](../images/it-amazon-forecast-05-05-006.jpg)
 
 Quindi creiamo un grafico di tendenza, ad esempio le vendite dell'ultimo periodo andando a leggere direttamente il database delle vendita senza necessità di creare dataset, modelli etc. 
 

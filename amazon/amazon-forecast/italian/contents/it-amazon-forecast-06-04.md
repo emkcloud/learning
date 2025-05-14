@@ -1,8 +1,12 @@
 ## (slide 1)
 
+![slide](../images/it-amazon-forecast-06-04-001.jpg)
+
 Purtroppo i modelli di Amazon Forecast non sono come i diamanti che durano per sempre, hanno bisogno di manutenzione e controllo constanti. Alcune volte bisognerà riallenarli e altre volte ricrearli da capo. Per sapere come e quando, Amazon ci mette a disposizione una funzionalità chiamata Monitoring.
 
 ## (slide 2)
+
+![slide](../images/it-amazon-forecast-06-04-002.jpg)
 
 Un modello è la risorsa indispensabile per la generazione delle previsioni (forecasts), però abbiamo visto che quando generiamo delle nuove previsioni possiamo farlo in diversi maniere: creare un nuovo modello, usarne uno nuovo o eseguire il RETRAIN di uno esistente.
 
@@ -15,6 +19,8 @@ Però ci sono anche condizioni in cui non abbiamo molto storico, le vendite sono
 Per sapere quando un modello inizia ad essere meno affidabile abbiamo bisogno di una metrica che possiamo controllare nel tempo dopo ogni generazione di previsioni. Qui entra in gioco il monitoring.
 
 ## (slide 3)
+
+![slide](../images/it-amazon-forecast-06-04-003.jpg)
 
 Il monitoraggio di un predictor consente di vedere come cambiano le prestazioni del modello nel tempo. Ci sono diversi fattori possono causare cambiamenti nelle prestazioni, come azioni commerciali, nuove linee di prodotti o semplicemente cambiamenti nel comportamento dei clienti.
 
@@ -29,6 +35,8 @@ Passo (3): Generiamo le previsioni o aggiorniamo i nostri dataset. I risultati s
 Passo (4): Decidiamo di fare un RETRAIN del modello, il predictor risultante sarà un nuovo modello ma il monitoring sarà copiato interamente sul nuovo predictor e quindi il monitoraggio continua. Se invece dovessimo creare un predictor ex novo anche il monitoraggio viene reinizializzato.
 
 ## (slide 4)
+
+![slide](../images/it-amazon-forecast-06-04-004.jpg)
 
 Vediamo in questa slide, semplificando al massimo, il perché il monitoring può calcolare le metriche ogni volta che generiamo previsioni e carichiamo nuovi dati. Chiedo scusa ai matematici che avrebbero avuto sicuramente le parole tecniche per spiegarlo alla perfezione, però mi devo arrangiare con quello che ho.
 
@@ -46,17 +54,25 @@ Quando creeremo un nuovo predictor ricominciamo tutto da capo con un nuovo monit
 
 ## (slide 5)
 
+![slide](../images/it-amazon-forecast-06-04-005.jpg)
+
 Per attivare il monitoring abbiamo due soluzioni, attivarlo durante la creazione del predictor o attivarlo successivamente alla creazione. In questa slide ho due predictor senza monitoring attivato quindi posso usare l'ultimo MyPredictorRetrain e attivarlo con il link indicato dalla freccia verde.
 
 ## (slide 6)
+
+![slide](../images/it-amazon-forecast-06-04-006.jpg)
 
 Una volta attivo il monitoring dovremmo vedere i dettagli del monitoring come l'indirizzo ARN e lo stato impostato su Active. Il primo grafico di ogni metrica presente in questo momento del monitoring dovrebbe essere una linea piatta con le stesse metriche assegnate durante la creazione del predictor. Con la seconda freccia verde sulla destra potete selezionare la metrica che volete analizzare.
 
 ## (slide 7)
 
+![slide](../images/it-amazon-forecast-06-04-007.jpg)
+
 A questo punto possiamo iniziare il ciclo di creazione forecast (come vediamo in questa slide), caricamento di nuovi dataset etc come spiegato nelle slide precedenti. Non è necessario rivedere tutti i passi, sono cose che abbiamo già fatto precedentemente e a questo punto del corso dovrebbero essere già chiare.
 
 ## (slide 8)
+
+![slide](../images/it-amazon-forecast-06-04-008.jpg)
 
 Quindi dopo un po' di tempo, quando avete almeno concluso un ciclo andate ad analizzare di nuovo il monitoring a questo punto dovreste trovare dei dati diversi con il grafico aggiornato.
 
@@ -67,6 +83,8 @@ Nel monitoraggio delle prestazioni del tuo modello, puoi vedere come le metriche
 Un miglioramento nelle metriche indica che il tuo modello si sta adattando bene ai nuovi dati, mentre un peggioramento può suggerire la necessità di un RETRAIN o anche di revisione del modello.
 
 ## (slide 9)
+
+![slide](../images/it-amazon-forecast-06-04-009.jpg)
 
 Vi ripropongo una slide già pubblicata nelle lezioni che riguardavano il predictor, qui vedete le metriche utilizzate da amazon per valutare la qualità di un modello. Come vedete non è possibile indicare un valore di riferimento per dire al di sotto è positivo e oltre è negativo, vediamo il perchè:
 

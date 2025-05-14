@@ -1,8 +1,12 @@
 ## (slide 1)
 
+![slide](../images/it-amazon-forecast-06-02-001.jpg)
+
 In questa lezione facciamo un ripasso sul metodo utilizzato fino a questo momento e analizziamo come ottimizzare il processo di elaborazione dei dati nei vari passi di Amazon Forecast.
 
 ## (slide 2)
+
+![slide](../images/it-amazon-forecast-06-02-002.jpg)
 
 In questo corso su Amazon Forecast abbiamo seguito sempre l’approccio indicato in questa slide il quale è suddiviso in 3 passaggi fondamentali. La creazione del dataset, la creazione del predictor che è il nostro modello e la generazione delle previsioni chiamate forecasts.
 
@@ -11,6 +15,8 @@ E ogni volta che vogliamo ottenere delle nuove previsioni basta ripetere questo 
 Però in verità esiste anche un metodo diverso per aggiornare le previsioni di Amazon Forecast senza dover ricreare tutti i dati e rigenerare tutte le risorse presenti. Vediamo il primo aspetto su questo tema:
 
 ## (slide 3)
+
+![slide](../images/it-amazon-forecast-06-02-003.jpg)
 
 Esistono due modi per caricare un dataset in Amazon Forecast.
 
@@ -29,6 +35,8 @@ Ottimo e sicuramente da prendere in considerazione su dataset molto grandi, ad e
 Adesso passiamo a vedere la fase successiva della creazione del predictor che anche li ci sono delle novità.
 
 ## (slide 4)
+
+![slide](../images/it-amazon-forecast-06-02-004.jpg)
 
 Dopo aver creato i dataset con FULL o INCREMENTAL possiamo pensare che dobbiamo rieseguire la creazione del predictor con i nuovi dataset. In realtà questo non è obbligatorio, vediamo insieme il perché.
 
@@ -58,11 +66,15 @@ Però ovviamente ad un certo momento sarà necessario rieseguire l'allenamento d
 
 ## (slide 5)
 
+![slide](../images/it-amazon-forecast-06-02-005.jpg)
+
 Adesso la domanda sorge spontanea. Come faccio a sapere quando un modello non è più affidabile? Io nel mio caso a dirvi la verità uso quasi sempre un tempo determinato, tipo da un cliente ogni 6 settimane lo aggiorno, non sarà super preciso però è veloce, affidabile e il cliente non ha costi aggiuntivi di analisi.
 
 Però, levato questo, Amazon Forecast ci mette a disposizione un potente strumento per eseguire questo controllo e la funzionalità si chiama monitoring qui vi faccio vedere la pagina della documentazione solo a scopo informativo in quanto lo vedremo più in dettaglio nelle lezioni successive.
 
 ## (slide 6)
+
+![slide](../images/it-amazon-forecast-06-02-006.jpg)
 
 Ok ritorniamo al filo principale della creazione FULL o INCREMENTAL.
 
@@ -76,6 +88,8 @@ Andiamo insieme a fare questa operazione per poi controllare il risultato:
 
 ## (slide 7)
 
+![slide](../images/it-amazon-forecast-06-02-007.jpg)
+
 Prima di tutto vediamo quali sono i dati che possiamo aggiungere. Andiamo al calendario cosa che con il servizio di Amazon Forecast imparerete a usare spesso. Oggi siamo al 13 Marzo 2024 e rispetto allo schema di riepilogo l'ultima vendita elaborata era il 25 Febbraio 2024 indicata con il cerchio arancione. 
 
 Quindi la unica cosa che possiamo fare è elaborare un dataset con le due settimane seguenti indicate dai cerchi verdi in quanto il mio cliente elabora le settimane dal Lunedì alla Domenica.
@@ -83,6 +97,8 @@ Quindi la unica cosa che possiamo fare è elaborare un dataset con le due settim
 Quindi procedo a creare la stessa struttura del dataset FULL però solo con queste due settimane di dati che si dovranno andare a sommare a quelli che già esistono nel nostro dataset attuale.
 
 ## (slide 8)
+
+![slide](../images/it-amazon-forecast-06-02-008.jpg)
 
 OK ho lanciato la mia elaborazione parziale e come potete vedere ho una parte del dataset risultato (in questo caso quello TARGET) con le vendite giornalieri dei prodotti dal 26 Febbraio 2024 in avanti come avevamo stabilito. Il RELATED avrà le stesse informazioni però aggregate settimanalmente.
 
@@ -92,6 +108,8 @@ Prima di passare alla slide successiva, vorrei fare una precisazione, secondo la
 
 ## (slide 9)
 
+![slide](../images/it-amazon-forecast-06-02-009.jpg)
+
 Come detto in precedenza purtroppo al momento il valore INCREMENTAL è possibile farlo da linea di comando o tramite SDK, quindi eseguiamo questi 3 comandi per aggiornare i nostri dataset. 
 
 Il primo comando create-dataset-import-job esegue l'aggiornamento del dataset TARGET, il secondo eseguo l'aggiornamento del dataset RELATED e l'ultimo il dataset METADATA.
@@ -100,11 +118,15 @@ Una volta lanciati gli aggiornamenti aspettate la fine dell'elaborazione che pot
 
 ## (slide 10)
 
+![slide](../images/it-amazon-forecast-06-02-010.jpg)
+
 Una volta pronti i dataset, create un nuovo forecast utilizzando lo stesso predictor di prima non abbiamo bisogno di crearne un altro. Il passaggio della creazione di un forecast ormai sapete benissimo come farlo è inutile che vi faccio vedere tutte le schermate e i parametri.
 
 Io come potete vedere da questa slide ne ho creato uno che si chiama MyForecastUpdate, adesso andiamo a fare una query su questo forecast e vediamo se troviamo la previsione per le settimane successive alle due settimane nuove cha abbiamo inserito nel dataset.
 
 ## (slide 11)
+
+![slide](../images/it-amazon-forecast-06-02-011.jpg)
 
 Ok ho fatto una query con il codice prodotto che avevamo visto nel dataset di aggiornamento e le date di previsione appartengono alle 3 settimane prossime esattamente come ci aspettavamo, quindi abbiamo aggiornato il dataset con le ultime due settimane senza ricaricare tutto e abbiamo generato le previsioni senza dover creare un nuovo predictor. 
 
