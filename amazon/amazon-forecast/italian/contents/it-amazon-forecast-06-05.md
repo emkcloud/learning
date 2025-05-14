@@ -1,8 +1,12 @@
 ## (slide 1)
 
+![slide](../images/it-amazon-forecast-06-05-001.jpg)
+
 In questa lezione vediamo come usare il servizio di CloudWatch per avere delle statistiche sull'utilizzo del servizio, come ad esempio quanto occupano nel tempo di nostri dataset, quanti punti di previsione abbiamo generato in un certo periodo, quanti predictor abbiamo creato, etc.
 
 ## (slide 2)
+
+![slide](../images/it-amazon-forecast-06-05-002.jpg)
 
 Il servizio di CloudWatch è uno dei servizi più importanti in AWS in quanto è possibile tenere sotto controllo moltissime metriche legate a tutti i servizi presenti in AWS. Il servizio è molto vasto non possiamo fare una panoramica completa però possiamo cercare di elencare alcuni punti importanti.
 
@@ -14,11 +18,15 @@ Ad esempio possiamo essere avvisati se i dataset di Forecast sorpassano una dete
 
 ## (slide 3)
 
+![slide](../images/it-amazon-forecast-06-05-003.jpg)
+
 Nel nostro caso quello che ci interessa è Amazon Forecast e tutte le metriche messe a disposizione di CloudWatch per analizzarle in un determinato periodo di tempo che possiamo selezionare. Quindi selezionate dal menu principale le Metriche (prima freccia verde alla sinistra) e ricercate il servizio di AWS/Forecast nell'elenco dei servizi che sono attivi sul vostro account (freccia verde sulla destra).
 
 Una volta individuata la sezione di AWS/Forecast cliccate per entrare nelle metriche.
 
 ## (slide 4)
+
+![slide](../images/it-amazon-forecast-06-05-004.jpg)
 
 Queste sono le metriche divise per gruppi che sono presenti in cloudWatch al momento di questo corso e che sono collegate al servizio di Amazon Forecast,
 
@@ -45,10 +53,14 @@ Scegliamo la sezione delle metriche generali per vedere cosa troviamo al suo int
 
 ## (slide 5)
 
+![slide](../images/it-amazon-forecast-06-05-005.jpg)
+
 Nelle lista delle metriche disponibili ad esempio selezioniamo DataSetSize dovremmo vedere la dimensione dei nostri dataset durante le operazioni di importazione. In realtà io vi ho semplificato molto questa slide perché mi interessava trasmettervi il concetto che su cloudwatch trovate molte informazioni che vi possono aiutare a capire il volume delle operazioni che eseguite con Amazon Forecast.
 
 Amazon cloudwatch e l'interrogazione delle metriche è molto più completo e complesso, potete settare i valori del grafico per medie, minimi, massimi, somme. Cambiare il tipo di grafico tra linea, area, barre etc, inoltre potete eseguire delle query complesse sulle metriche e volendo si possono attivare gli allarmi.
 
 ## (slide 6)
+
+![slide](../images/it-amazon-forecast-06-05-006.jpg)
 
 Se volete conoscere qualcosa di più sul servizio di cloudwatch che è molto vasto come argomento vi consiglio di partire dalla documentazione ufficiale per poi passare al blog AWS come approfondimento.

@@ -1,8 +1,12 @@
 ## (slide 1)
 
+![slide](../images/it-amazon-forecast-07-02-001.jpg)
+
 In questa sezione del corso vi indico le principali risorse per continuare a studiare questo servizio. E se sei ancora qui ti devo dire che sei un vero guerriero della conoscenza. Calcolo che normalmente alle risorse aggiuntive arriva solo il 2% degli iscritti. Sei tra i pochi e arriverai lontano, congratulazioni.
 
 ## (slide 2)
+
+![slide](../images/it-amazon-forecast-07-02-002.jpg)
 
 Prima fonte consigliata è la documentazione ufficiale di Amazon che normalmente mette a disposizione il manuale in formato HTML e in formato PDF per scaricare una copia in locale. La documentazione di è molto ripetitiva su diversi argomenti però ti assicuro che letta con calma e pazienza è molto efficiente.
 
@@ -10,24 +14,34 @@ Qui sotto ti indico la direzione URL dove puoi trovare la documentazione di amaz
 
 ## (slide 3)
 
+![slide](../images/it-amazon-forecast-07-02-003.jpg)
+
 Un altra risorsa molto importante è il blog ufficiale AWS dove si trovano anche su Forecast degli articoli interessanti, normalmente non sono proprio per utenti entry diciamo, però se si conosce già il servizio di base si possono studiare degli approfondimenti interessanti, in quanti gli autori sono tutti super preparati.
 
 Quindi se mi permettete un consiglio, quando volete scoprire un servizio nuovo partite sempre dalla documentazione ufficiale che viene indicata nella scheda del prodotto e poi casomai approfondite con le pubblicazioni presenti nel blog AWS che trattano quel servizio specifico.
 
 ## (slide 4)
 
+![slide](../images/it-amazon-forecast-07-02-004.jpg)
+
 Un altra risorsa molto interessante con video è quella di SKILL BUILDER una piattaforma di learning messa a disposizione da Amazon con migliaia di contenuti di cui la maggior parte gratis. Basta avere un account Amazon per accedervi. Io ho usato diverse volte questa piattaforma anche perché ha contenuti in molte lingue e non solo in inglese. (vi consiglio di dargli un'occhiata alla prima occasione)
 
 ## (slide 5)
+
+![slide](../images/it-amazon-forecast-07-02-005.jpg)
 
 Per finire visitate sempre youtube dove si possono trovare contenuti interessanti, forse in italiano non trovate quasi nulla, ma in inglese e in spagnolo già qualcosa di interessante ci sta.
 Date un occhio anche ai canali ufficiali AWS specialmente le registrazione negli eventi REINVENT o Summit che AWS organizza in giro per il mondo ogni anno.
 
 ## (slide 6)
 
+![slide](../images/it-amazon-forecast-07-02-006.jpg)
+
 Un altra risorsa interessante è il workshop studio dove trovate anche una sezione dedicata proprio ad Amazon Forecast. Vi lascio anche di questa risorsa il link della pagina WEB.
 
 ## (slide 7)
+
+![slide](../images/it-amazon-forecast-07-02-007.jpg)
 
 Una risorsa che non può mancare quando inizi già ad avere qualche esperienza con il servizio è quella degli esempio di Amazon Forecast pubblicati in GITHUB direttamente dallo staff di Amazon.
 Tramite questi esempio potrai seguire passo passo molte funzionalità con un notebook JUPYTER e personalizzare ogni passo con il codice PYTHON, sicuramente laboratori che hanno un valore aggiunto.
