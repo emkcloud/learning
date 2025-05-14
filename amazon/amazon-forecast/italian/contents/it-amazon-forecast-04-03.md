@@ -1,5 +1,7 @@
 ## (slide 1)
 
+![slide](../images/it-amazon-forecast-04-03-001.jpg)
+
 Adesso che abbiamo creato il nostro predictor in teoria siamo già pronti per generare le previsioni. 
 
 Però io dedicherei un po di tempo per analizzare il modello che è stato creato e quello che in linea di massima è successo durante la fase di creazione del nostro primo predictor.
@@ -7,6 +9,8 @@ Però io dedicherei un po di tempo per analizzare il modello che è stato creato
 Non entrerei nel dettaglio di tutto perché ci leverebbe troppo tempo per arrivare alle previsioni. Quindi vediamo solo gli aspetti principali e casomai rimandiamo a lezioni successive gli aspetti più avanzati.
 
 ## (slide 2)
+
+![slide](../images/it-amazon-forecast-04-03-002.jpg)
 
 In questa slide cercheremo di analizzare i passi che la creazione del modello ha dovuto eseguire prima di pubblicare il predictor. Infatti in diverse ore di elaborazione computazionale cosa è successo di preciso?
 
@@ -32,6 +36,8 @@ Queste metriche aiutano a capire come il modello si comporta sotto diversi aspet
 
 ## (slide 3)
 
+![slide](../images/it-amazon-forecast-04-03-003.jpg)
+
 Riprendendo il concetto di aggregazione introdotto precedentemente:
 
 In questa slide vediamo un esempio di aggregazione dati nel caso in cui avessimo un dataset su base oraria e vogliamo creare il predictor per previsioni su base giornaliera. Come potete vedete per default in Amazon Forecast viene utilizzata la somma del valore demand.
@@ -47,6 +53,8 @@ Dato che stiamo discutendo su questo aspetto vi voglio ricordare anche un parame
 L'opzione allineamento del tempo serve quando vogliano aggregare in modo diverso. Ad esempio qui potrei voler indicare che il giorno inizia alle ore 8:00 quindi se indico questo valore l'entrata del 15 Gennaio 2018 alle ore 7:00 apparterebbe al giorno precedente.
 
 ## (slide 4)
+
+![slide](../images/it-amazon-forecast-04-03-004.jpg)
 
 In questa slide cercherò di chiare il concetto di backtest e più precisamente la suddivisioni dei dati per la fase di training e per la fase di test. Iniziamo con la definizione ufficiale di Amazon:
 
@@ -64,6 +72,8 @@ In questo caso possiamo aggiungere finestre di backtest come scenario 2, scenari
 
 ## (slide 5)
 
+![slide](../images/it-amazon-forecast-04-03-005.jpg)
+
 Se siete dei curiosi incurabili potete approfondire la fase dei backtest eseguendo il lavoro di esportazione backtest results utilizzando il pulsante apposito che trovate nella scheda del predictor. 
 
 Il pulsante è indicato in questa slide sotto la freccia verde. Una volta che cliccate su questo pulsante la richiesta di esportazione è estremamente facile non serve che vi faccio un tutorial, dovete indicare un nome del lavoro e il percorso su Amazon S3 per la memorizzazione del risultato tramite multipli file CSV.
@@ -74,17 +84,23 @@ Andiamo a vedere velocemente i due esempi di risultato che ho già in un foglio 
 
 ## (slide 6)
 
+![slide](../images/it-amazon-forecast-04-03-006.jpg)
+
 In questo caso abbiamo per ogni item_id il periodo di previsione che sono 3 settimane, il valore reale delle vendite e in fondo i percentili calcolati. Facciamo un esempio: le prime 3 righe appartengono al codice prodotto 204538 e ogni riga rappresenta la previsione di una settimana quindi 5 unità la prima settimana e 3 unità e 5 unità per quelle successive. Se prendiamo ad esempio la colonna della previsione mean possiamo notare che siamo andati molto vicini al valore reale.
 
 Ovviamente le righe di questo file sono migliaia e nella maggior parte dei casi non arriverete a fare questa analisi specialmente su modelli già in produzione, però devo dire che ci sono state due volte minimo che sono riuscito a scovare alcuni problemi che avevo su analisi problematiche andando ad analizzare alcuni articoli che sapevo come funzionavano e quello che mi dovevo aspettare.
 
 ## (slide 7)
 
+![slide](../images/it-amazon-forecast-04-03-007.jpg)
+
 L'altra informazione che viene generate dalla funzione di export backtest è una lista di serie temporali e items sui cui possiamo controllare il valore calcolato delle metriche. Anche qui non vi consiglio all'inizio di perdere molto tempo su questo tipo di analisi, però se dovesse servire sapete che sta qui...
 
 Direi di chiudere il discorso del backtest e passiamo agli algoritmi:
 
 ## (slide 8)
+
+![slide](../images/it-amazon-forecast-04-03-008.jpg)
 
 Qui vi riporto qui gli algoritmi che utilizza Amazon Forecast per creare il suo modello. Non è fondamentale conoscere gli algoritmi, in quanto il valore aggiunto di Amazon Forecast è che noi non dobbiamo avere la questa conoscenza per utilizzarlo proprio perché su questo aspetto ci ha pensato Amazon a creare una selezione automatica in base a complessi backtest e misurazione dei risultati tramite metriche.
 
@@ -96,6 +112,8 @@ Gli algoritmi indicati al momento sono 6 secondo la documentazione ufficiale di 
 CNN-QR DeepAR+ Prophet NPTS ARIMA e ETS, i primi due sono su rete neurale.
 
 ## (slide 9)
+
+![slide](../images/it-amazon-forecast-04-03-009.jpg)
 
 Questa è la pagina ufficiale di Amazon dove potete trovare alcune informazioni se per caso volete approfondire questa conoscenza per desiderio personale, in quanto come detto in precedenza non è indispensabile per utilizzare il servizio di Amazon Forecast.
 
@@ -109,6 +127,8 @@ E cosi via potete trovare informazioni anche sugli altri algoritmi, sulla docume
 
 ## (slide 10)
 
+![slide](../images/it-amazon-forecast-04-03-010.jpg)
+
 In questa slide possiamo vedere anche un confronto di funzionalità di ogni algoritmo in base anche ai 
 dati che analizza, ad esempio potete notare che solo i due algoritmi di amazon analizzano i metadati di un item come ad esempio colore, brand etc, gli altri algoritmi faranno calcolo diversi ma non useranno questi dati.
 
@@ -116,6 +136,8 @@ Questa è una tabellina che vi consiglio da tenere da parte in quanto molte volt
 Detto questo passerei alla slide delle metriche.
 
 ## (slide 11)
+
+![slide](../images/it-amazon-forecast-04-03-011.jpg)
 
 Le metriche visualizzate su un AutoPredictor in Amazon Forecast rappresentano diversi indicatori statistici utilizzati per valutare la precisione e l'efficacia delle previsioni generate dal modello.
 
@@ -137,6 +159,8 @@ Per andare oltre dovete passare a documentazione tecnico matematica.
 
 ## (slide 12)
 
+![slide](../images/it-amazon-forecast-04-03-012.jpg)
+
 In questa slide potete vedere i valori delle metriche del nostro predictor. In poche parole questo è il risultato della media generale di tutte le metriche che sono state calcolate nella fase di backtest.
 
 Vi ricordate quel foglio EXCEL con tutti gli item e i periodi con il calcolo delle metriche su ogni riga. Ecco qui vedete il risultato globale di quelle migliaia di operazioni eseguite su ogni riga del dataset principale.
@@ -144,6 +168,8 @@ Vi ricordate quel foglio EXCEL con tutti gli item e i periodi con il calcolo del
 Normalmente più i valori delle metriche sono bassi e più la qualità del modello è migliore per quella specifica metrica. Ricordatevi questo concetto per quanto vedremo nella parte avanzata come controllare se un modello sta perdendo di qualità e bisogna rieseguire il ciclo di allenamento.
 
 ## (slide 13)
+
+![slide](../images/it-amazon-forecast-04-03-013.jpg)
 
 Vi ho lasciato i riferimenti alla documentazione degli algoritmi e delle metriche utilizzate però voglio sottolineare ancora una volta che il servizio di Amazon Forecast è nato e ha senso proprio in quanto non abbiamo necessità di questa conoscenza matematica. Il lavoro si deve concentrare sulla precisione della preparazione dei dati, stabilire i valori che aiutano la previsione e cosa importante saper integrare la previsione ottenuta in strumenti che danno il vero valore aggiunto al cliente o alla vostra azienda.
 

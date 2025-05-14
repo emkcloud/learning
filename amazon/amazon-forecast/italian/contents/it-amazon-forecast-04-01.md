@@ -1,8 +1,12 @@
 ## (slide 1)
 
+![slide](../images/it-amazon-forecast-04-01-001.jpg)
+
 Benvenuto a questa nuova sezione del corso dedicata alla creazione dei modelli in Amazon Forecast. Questa fase rappresenta la parte centrale del servizio, infatti prima si preparano i dati, poi si creano i modelli e alla fine si generano le previsioni. Per essere precisi possiamo aggiungere le query sulle previsioni.
 
 ## (slide 2)
+
+![slide](../images/it-amazon-forecast-04-01-002.jpg)
 
 Se hai seguito tutte lezioni precedenti in questo momento ti dovresti trovare in questa condizione:
 
@@ -17,6 +21,8 @@ Se hai fatto tutto questo siamo pronti per analizzare la creazione del modello d
 
 ## (slide 3)
 
+![slide](../images/it-amazon-forecast-04-01-003.jpg)
+
 Prima di iniziare ad analizzare il predictor voglio discutere con voi di due cose.
 
 La prima è rappresentata dallo screenshot in alto dove nelle lezioni precedenti avevamo visto che una volta caricati i dataset si sarebbe sbloccato il tasto di "predictor training" come indicato dalla prima freccia verde al contrario della generazione delle previsioni dove il tasto rimarrà disabilitato fino a quando non sarà disponibile un predictor. 
@@ -30,6 +36,8 @@ Il problema è che Amazon Forecast è un servizio tutto automatico e molto facil
 Quindi purtroppo anche se siamo pronti per fare START io direi andiamo prima a cercare di capire cosa succederà dal punto di vista logico quando lanceremo la creazione del predictor.
 
 ## (slide 4)
+
+![slide](../images/it-amazon-forecast-04-01-004.jpg)
 
 OK iniziamo con cos'è un predictor in Amazon Forecast. Iniziamo dalla definizione ufficiale di Amazon.
 Un predictor è un modello di Amazon Forecast che viene addestrato utilizzando le serie temporali di destinazione, le serie temporali correlate, i metadati degli articoli e qualsiasi set di dati aggiuntivo che includiamo. Possiamo utilizzare i predictor per generare previsioni basate sui dati e sulle serie temporali.
@@ -53,6 +61,8 @@ AutoPredictor è progettato per gestire automaticamente complessità come la sel
 Detto questo andiamo alla prossima slide per fare un passo in avanti:
 
 ## (slide 5)
+
+![slide](../images/it-amazon-forecast-04-01-005.jpg)
 
 OK in questa slide iniziamo ad analizzare alcuni parametri che dovremmo specificare nella creazione del predictor. Per cercare di creare il primo predictor il più velocemente possibile mi concentrerò solo sui parametri più importanti e rimanderemo le personalizzazioni nelle lezioni più avanzate.
 
@@ -85,6 +95,8 @@ OK a questo punto andiamo alla prossima slide per vedere graficamente la frequen
 
 ## (slide 6)
 
+![slide](../images/it-amazon-forecast-04-01-006.jpg)
+
 La frequenza: facciamo conto che siamo nel bel mezzo di natale e le previsioni future inizieranno a gennaio. Nel primo caso abbiamo frequenza 3 MESI quindi si divideranno i mesi in blocchi da 3 e ogni blocco sarà una sola previsione con il totale di quel periodo. Mentre l'orizzonte è il numero delle previsioni totali che abbiamo impostato a 2. Quindi avremmo 2 previsioni:
 
 La prima: Le vendite sommate di GEN FEB e MAR (orizzonte 1 di 2)
@@ -100,6 +112,8 @@ Da qui in avanti non ci saranno più previsioni.
 Sperando di essere stato chiaro su questo concetto passerei al secondo gruppo di opzioni presenti sulla schermata dedicata alla creazione di un predictor.
 
 ## (slide 7)
+
+![slide](../images/it-amazon-forecast-04-01-007.jpg)
 
 In questa schermata vengono indicati i quantili che devono essere disponibili nella generazione delle previsioni. Se non sapete cosa sono i quantili cercherò di spiegarvelo nel modo più semplice possibile, in ogni caso se avete la necessità di approfondire questo concetto statistico vi consiglio di cercare tra l'enorme documentazione presente in internet.
 
@@ -121,6 +135,8 @@ Ad esempio su un percentile 70 ho un previsione che mi permette di stoccare in a
 
 ## (slide 8)
 
+![slide](../images/it-amazon-forecast-04-01-008.jpg)
+
 Ok cerchiamo di rivedere il tutto, prendiamo le vendite di 100 giorni, uso il valore 100 per far si che i numeri sono semplici da calcolare, sto barando un po' però lo faccio per semplificare perdonatemi.
 
 A questo punto ordiniamo questi numeri (che sono le vendite mensili di un prodotto) in modo crescente in una tabella. Per prendere il valore corrispondente al quantile usiamo la formula di "arrotondamento all'indice intero più vicino", ci sono anche modi diversi come ad esempio il "metodo di interpolazione lineare" che calcola la media delle due posizioni più vicine etc però non complichiamoci la vita e usiamo la formula più semplice.
@@ -140,6 +156,8 @@ In ogni caso esiste anche la possibilità di lavorare con una sola previsione fi
 
 ## (slide 9)
 
+![slide](../images/it-amazon-forecast-04-01-009.jpg)
+
 Ritorniamo alla schermata precedente dove erano indicati i quantili, aggiungendo con il pulsante apposito un nuovo quantile potete vedere che uno dei valori ammessi è proprio "mean".
 
 La definizione di questo valore è la seguente: 
@@ -149,6 +167,8 @@ Anche in questo caso lavorare con un unico valore medio o con degli estremi tipo
 
 ## (slide 10)
 
+![slide](../images/it-amazon-forecast-04-01-010.jpg)
+
 OK, passiamo al seguente gruppo di opzioni che dovranno essere specificate durante la creazione di un predictor. In questa parte al momento le cose sono semplici perché non useremo nessuna di queste opzioni e nella creazione del nostro predictor lasceremo i valori cosi di default come li troviamo nella schermata.
 
 Però riprenderemo questo aspetto nelle lezioni successive che riguardano la parte avanzata dei predictor, in quanto sono opzioni di controllo che servono quando abbiamo una certa confidenza con i modelli e hanno anche dei costi aggiuntivi rispetto a quelli di elaborazione durante la creazione di un predictor.
@@ -156,6 +176,8 @@ Però riprenderemo questo aspetto nelle lezioni successive che riguardano la par
 Quindi passiamo adesso all'ultimo gruppo di opzioni:
 
 ## (slide 11)
+
+![slide](../images/it-amazon-forecast-04-01-011.jpg)
 
 Queste opzioni sono molto interessanti, in quanto sono messe a disposizione da Amazon senza dover creare dei dataset complessi e costosi da manutenere. Oltretutto Amazon ha promesso che rilascerà in futuro altre feature che miglioreranno sempre di più le previsioni che sono influenzate da eventi esterni.
 
@@ -168,5 +190,7 @@ Un'altro dataset integrativo messo a disposizione da Amazon è Holidays che uso 
 Invece la configurazione avanzate indicata a fine schermata è una sezione con un file JSON di configurazione che vedremo nella parte avanzata del corso, al momento la lasciamo così di default.
 
 ## (slide 12)
+
+![slide](../images/it-amazon-forecast-04-01-012.jpg)
 
 Prima di chiudere questa lezione vi faccio vedere che nella documentazione ufficiale di Amazon trovate le coordinate geografiche ammesse per il servizio di previsione con WEATHER. Selezionate in alto la regione e controllate.
